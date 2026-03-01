@@ -40,10 +40,6 @@ shell:
     call cmdcmp
     jz cmd_color
 
-    mov di, c_shell
-    call cmdcmp
-    jz shell
-
     mov si, s_unknown
     call puts
     jmp shell
@@ -298,7 +294,6 @@ c_reboot   db "reboot", 0
 c_halt     db "halt", 0
 c_echo     db "echo", 0
 c_color    db "color", 0
-c_shell     db "sh", 0
 
 times 510 - ($ - $$) db 0
 dw 0xAA55
